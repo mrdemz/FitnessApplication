@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Fitness Application</string>
+    <string name="goalDesc">Goal</string>
+    <string name="workoutDesc">Workouts</string>
+    <string name="nutritionDesc">Nutrition</string>
+    <string name="meDesc">Me</string>
+    <string name="profImg_string">Profile Picture</string>
+    <string name="createProfile_String">Create Profile</string>
+    <string name="goalWeight_String">Goal Weight:</string>
+    <string name="goalWeightVal_String" />
+    <string name="date_val" />
+    <string name="currWeight_String">Current Weight:</string>
+    <string name="intake_string">Daily Calorie Intake</string>
+    <string name="todaysWorkout_String">Today\'s Workout:</string>
+    <string name="workout_string">Workout</string>
+</resources>
