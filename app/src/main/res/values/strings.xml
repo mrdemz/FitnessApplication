@@ -13,4 +13,15 @@
     <string name="intake_string">Daily Calorie Intake</string>
     <string name="todaysWorkout_String">Today\'s Workout:</string>
     <string name="workout_string">Workout</string>
+    <string name="nameString">Name:</string>
+    <string name="ageString">Age:</string>
+    <string name="weightString">Weight:</string>
+    <string name="heightString">Height:</string>
+    <string name="confirmString">Confirm</string>
+    <string name="nameHint"></string>
+    <string name="ageHInt"></string>
+    <string name="weightHint"></string>
+    <string name="heightHint"></string>
+    <string name="editString">Edit</string>
+    <string name="saveString">Save</string>
 </resources>

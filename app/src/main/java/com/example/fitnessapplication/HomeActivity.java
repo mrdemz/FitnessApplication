@@ -2,6 +2,8 @@ package com.example.fitnessapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +15,6 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -22,13 +23,37 @@ import java.util.Date;
 
 public class HomeActivity extends AppCompatActivity {
 
+    ProfileDataSource profileDataSource = new ProfileDataSource(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
 
+
+
+
+        profileDataSource.open();
+        if(profileDataSource.getCount() == 0){
+            AlertDialog.Builder newUserDialog = new AlertDialog.Builder(HomeActivity.this);
+            newUserDialog.setMessage("User Profile not found, would you like to make a new profile for better experience?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    }).setNegativeButton("No",null);
+            AlertDialog alert = newUserDialog.create();
+            alert.show();
+
+        }
+
+
     initMeActivity();
+    initHomeActivity();
     initGraph();
     initDate();
     ProgressBar progress = findViewById(R.id.progressBar);
@@ -66,7 +91,7 @@ public class HomeActivity extends AppCompatActivity {
         steps.add(new BarEntry(07, 1067));
 
         BarDataSet barDataSet = new BarDataSet(steps, "Number of Steps");
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        barDataSet.setColors(Color.CYAN);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(11f);
 
@@ -94,7 +119,29 @@ public class HomeActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(HomeActivity.this, meActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                startActivity(intent);
+
+            }
+
+        });
+
+    }
+
+    private void initHomeActivity(){
+
+        View icon = findViewById(R.id.goalView);
+
+        icon.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View v) {
+
+                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

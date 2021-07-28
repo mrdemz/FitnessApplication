@@ -118,7 +118,7 @@
         app:srcCompat="@drawable/home_icon" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/createProfileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
