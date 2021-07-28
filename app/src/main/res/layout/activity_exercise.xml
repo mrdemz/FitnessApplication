@@ -2,147 +2,334 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/homeMainConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".HomeActivity">
+    android:background="@drawable/gradient">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bottomIconConstraint"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        tools:layout_editor_absoluteX="8dp">
 
-        <ImageView
-            android:id="@+id/meView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/meDesc"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nutritionView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/home_icon" />
-
-        <ImageView
-            android:id="@+id/goalView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/goalDesc"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/workoutView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/goal_icon" />
-
-        <ImageView
-            android:id="@+id/workoutView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/workoutDesc"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/nutritionView"
-            app:layout_constraintStart_toEndOf="@+id/goalView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/workout_icon" />
-
-        <ImageView
-            android:id="@+id/nutritionView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/nutritionDesc"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/meView"
-            app:layout_constraintStart_toEndOf="@+id/workoutView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/nutrition_icon" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bottomDivider"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@id/bottomIconConstraint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="391dp"
-        android:layout_height="682dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="682dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="#bcd1cd"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
 
-            <Button
-                android:id="@+id/button2"
+            <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/goal_icon" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/workout_icon" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/nutrition_icon" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/home_icon" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="649dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/exercises"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/workout_string"
-                android:textSize="20sp"
+                android:text="Exercises"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Warm Up"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:id="@+id/specialText"
+                android:layout_below="@+id/exercises"/>
+
+            <HorizontalScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/specialText">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/wholeBodyImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/whole_body_warmup"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+                    <TextView
+                        android:id="@+id/wholeBodytext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/wholeBodyImage"
+                        android:text="Whole Body Warm up"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/upperBodyImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/upper_warmup"
+                        android:layout_toRightOf="@+id/wholeBodyImage"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/upperBodyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/upperBodyImage"
+                        android:text="Upper Body Warmp up"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/lowerBodyImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/lower_warmup"
+                        android:layout_toRightOf="@+id/upperBodyImage"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/lowerBodyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/lowerBodyImage"
+                        android:text="Lower Body Warm up"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/scrollText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chest Exercise"
+                android:layout_below="@+id/scrollView"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"/>
+
+            <HorizontalScrollView
+                android:id="@+id/healthyScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scrollText">
+
+                <RelativeLayout
+                    android:id="@+id/pastaLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/benchPressImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/bench_press"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/benchPressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bench Press"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/dumbbellPressImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/dumbbell_press"
+                        android:layout_toRightOf="@+id/benchPressImage"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/dumbbellPressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/dumbbellPressImage"
+                        android:text="Dumbbell Press"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cableFlyImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/cable_fly"
+                        android:layout_toRightOf="@+id/dumbbellPressImage"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/cableFlyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/cableFlyImage"
+                        android:text="Cable Fly"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/scrollText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shoulder Exercise"
+                android:layout_below="@+id/healthyScrollView"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"/>
+
+            <HorizontalScrollView
+                android:id="@+id/pizzaScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scrollText3">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/militaryPressImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/military_press"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/militaryPressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Military Press"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arnoldPressImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/arnold_press"
+                        android:layout_toRightOf="@+id/militaryPressImage"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/arnoldPressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/arnoldPressImage"
+                        android:text="Arnold Press"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/lateralRaiseImage"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/lateral_raise"
+                        android:layout_toRightOf="@+id/arnoldPressImage"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:id="@+id/lateralRaiseText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/lateralRaiseImage"
+                        android:text="Lateral Raise"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
