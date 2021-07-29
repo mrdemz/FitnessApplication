@@ -29,11 +29,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-
-
-
         profileDataSource.open();
         if(profileDataSource.getCount() == 0){
             AlertDialog.Builder newUserDialog = new AlertDialog.Builder(HomeActivity.this);
@@ -62,6 +57,8 @@ public class HomeActivity extends AppCompatActivity {
 
     initMeActivity();
     initHomeActivity();
+    initExerciseActivity();
+    initNutritionActivity();
     initGraph();
     initDate();
     ProgressBar progress = findViewById(R.id.progressBar);
@@ -78,13 +75,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
-
-
-
 
     private void initGraph(){
         BarChart barChart = findViewById(R.id.barChart);
@@ -114,26 +104,17 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-
-
-
     private void initMeActivity(){
 
         View icon = findViewById(R.id.meView);
 
-        icon.setOnClickListener(new View.OnClickListener() {
+        icon.setOnClickListener(v -> {
 
-            @Override
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
 
-            public void onClick(View v) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                startActivity(intent);
-
-            }
+            startActivity(intent);
 
         });
 
@@ -159,6 +140,24 @@ public class HomeActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    private void initNutritionActivity(){
+        View icon = findViewById(R.id.nutritionView);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, NutritionActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+    }
+
+    private void initExerciseActivity(){
+        View icon = findViewById(R.id.workoutView);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ExerciseActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
     }
 
 

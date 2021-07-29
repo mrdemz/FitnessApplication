@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class ExerciseActivity extends AppCompatActivity {
+public class NutritionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise);
+        setContentView(R.layout.activity_nutrition);
         initHomeActivity();
         initExerciseActivity();
         initNutritionActivity();
@@ -24,7 +24,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         icon.setOnClickListener(v -> {
 
-            Intent intent = new Intent(ExerciseActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(NutritionActivity.this, ProfileActivity.class);
 
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -44,7 +44,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(ExerciseActivity.this, HomeActivity.class);
+                Intent intent = new Intent(NutritionActivity.this, HomeActivity.class);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -59,7 +59,7 @@ public class ExerciseActivity extends AppCompatActivity {
     private void initNutritionActivity(){
         View icon = findViewById(R.id.nutritionView);
         icon.setOnClickListener(v -> {
-            Intent intent = new Intent(ExerciseActivity.this, NutritionActivity.class);
+            Intent intent = new Intent(NutritionActivity.this, NutritionActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
@@ -68,10 +68,9 @@ public class ExerciseActivity extends AppCompatActivity {
     private void initExerciseActivity(){
         View icon = findViewById(R.id.workoutView);
         icon.setOnClickListener(v -> {
-            Intent intent = new Intent(ExerciseActivity.this, ExerciseActivity.class);
+            Intent intent = new Intent(NutritionActivity.this, ExerciseActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
     }
-
 }

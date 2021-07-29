@@ -26,6 +26,8 @@ public class ProfileActivity extends AppCompatActivity {
         initSaveButton();
         initHomeActivity();
         initMeActivity();
+        initNutritionActivity();
+        initExerciseActivity();
 
 
 
@@ -199,6 +201,24 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    private void initNutritionActivity(){
+        View icon = findViewById(R.id.nutritionView);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, NutritionActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+    }
+
+    private void initExerciseActivity(){
+        View icon = findViewById(R.id.workoutView);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, ExerciseActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
     }
 
 
