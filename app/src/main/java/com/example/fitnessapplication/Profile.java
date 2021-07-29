@@ -5,6 +5,7 @@ public class Profile {
  private String name;
  private int age;
  private double weight;
+    private double goalWeight;
  private double height;
 
 
@@ -48,6 +49,15 @@ public class Profile {
     public void setWeight(double weight) {
 
         this.weight = weight;
+    }
+    public double getGoalWeight() {
+
+        return goalWeight;
+    }
+
+    public void setGoalWeight(double goalWeight) {
+
+        this.goalWeight = goalWeight;
     }
 
     public double getHeight() {

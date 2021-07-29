@@ -35,6 +35,7 @@ public class ProfileDataSource {
             initialValues.put("name", c.getName());
             initialValues.put("age", c.getAge());
             initialValues.put("weight", c.getWeight());
+            initialValues.put("goalWeight", c.getGoalWeight());
             initialValues.put("height", c.getHeight());
             didSucceed = database.insert("profile", null, initialValues) > 0;
         } catch (Exception e) {
@@ -82,7 +83,8 @@ public class ProfileDataSource {
                 newItem.setName(cursor.getString(1));
                 newItem.setAge(cursor.getInt(2));
                 newItem.setWeight(cursor.getDouble(3));
-                newItem.setHeight(cursor.getDouble(4));
+                newItem.setGoalWeight(cursor.getDouble(4));
+                newItem.setHeight(cursor.getDouble(5));
                 profileList.add(newItem);
                 cursor.moveToNext();
             }
@@ -141,6 +143,7 @@ public class ProfileDataSource {
             updateValues.put("name", c.getName());
             updateValues.put("age", c.getAge());
             updateValues.put("weight", c.getWeight());
+            updateValues.put("goalWeight", c.getGoalWeight());
             updateValues.put("height", c.getHeight());
 
 

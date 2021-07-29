@@ -33,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         EditText etName = findViewById(R.id.nameEditText);
         EditText etAge = findViewById(R.id.ageEditText);
         EditText etWeight = findViewById(R.id.weightEditText);
+        EditText etgWeight = findViewById(R.id.goalWeightEditText);
         EditText etHeight = findViewById(R.id.heightEditText);
 
 
@@ -49,6 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
             etName.setText(prof.get(0).getName());
             etAge.setText(String.valueOf(prof.get(0).getAge()), TextView.BufferType.EDITABLE);
             etWeight.setText(String.valueOf(prof.get(0).getWeight()), TextView.BufferType.EDITABLE);
+            etgWeight.setText(String.valueOf(prof.get(0).getGoalWeight()), TextView.BufferType.EDITABLE);
             etHeight.setText(String.valueOf(prof.get(0).getHeight()), TextView.BufferType.EDITABLE);
 
 
@@ -109,11 +111,13 @@ public class ProfileActivity extends AppCompatActivity {
                         EditText etName = findViewById(R.id.nameEditText);
                         EditText etAge = findViewById(R.id.ageEditText);
                         EditText etWeight = findViewById(R.id.weightEditText);
+                        EditText etgWeight = findViewById(R.id.goalWeightEditText);
                         EditText etHeight = findViewById(R.id.heightEditText);
 
                         profile.setName(etName.getText().toString());
                         profile.setAge(Integer.parseInt(etAge.getText().toString()));
                         profile.setWeight(Double.parseDouble(etWeight.getText().toString()));
+                        profile.setGoalWeight(Double.parseDouble(etgWeight.getText().toString()));
                         profile.setHeight(Double.parseDouble(etHeight.getText().toString()));
 
                         wasSuccessful = dataSource.insertItem(profile);
@@ -127,11 +131,13 @@ public class ProfileActivity extends AppCompatActivity {
                         EditText etName = findViewById(R.id.nameEditText);
                         EditText etAge = findViewById(R.id.ageEditText);
                         EditText etWeight = findViewById(R.id.weightEditText);
+                        EditText etgWeight = findViewById(R.id.goalWeightEditText);
                         EditText etHeight = findViewById(R.id.heightEditText);
 
                         profile.setName(etName.getText().toString());
                         profile.setAge(Integer.parseInt(etAge.getText().toString()));
                         profile.setWeight(Double.parseDouble(etWeight.getText().toString()));
+                        profile.setGoalWeight(Double.parseDouble(etgWeight.getText().toString()));
                         profile.setHeight(Double.parseDouble(etHeight.getText().toString()));
                         profile.setProfileId(prof.get(0).getProfileId());
                         dataSource.updateProfile(profile);

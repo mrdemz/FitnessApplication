@@ -256,6 +256,29 @@
                 android:text="@string/heightHint"
                 app:layout_constraintBaseline_toBaselineOf="@id/textView9"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/goalWeightString"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <EditText
+                android:id="@+id/goalWeightEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="75dp"
+                android:layout_marginRight="75dp"
+                android:ems="10"
+                android:inputType="number"
+                android:importantForAutofill="no"
+                app:layout_constraintBaseline_toBaselineOf="@id/textView3"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

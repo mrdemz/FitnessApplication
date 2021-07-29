@@ -15,6 +15,7 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
                     + "name text not null, "
                     + "age int not null, "
                     + "weight decimal not null, "
+                    + "goalWeight decimal not null, "
                     + "height decimal not null);";
 
     public ProfileDBHelper(Context context) { // a constructor method to call the superclass constructor

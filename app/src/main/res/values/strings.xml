@@ -24,4 +24,6 @@
     <string name="heightHint"></string>
     <string name="editString">Edit</string>
     <string name="saveString">Save</string>
+    <string name="goalWeightString">Goal Weight:</string>
+    <string name="curWValString" />
 </resources>

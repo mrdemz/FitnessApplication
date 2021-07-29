@@ -24,7 +24,7 @@ import java.util.Date;
 public class HomeActivity extends AppCompatActivity {
 
     ProfileDataSource profileDataSource = new ProfileDataSource(this);
-
+    ArrayList<Profile> prof = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +48,14 @@ public class HomeActivity extends AppCompatActivity {
                     }).setNegativeButton("No",null);
             AlertDialog alert = newUserDialog.create();
             alert.show();
+
+        }
+        else if(profileDataSource.getCount()==1){
+          prof =  profileDataSource.getProfile();
+          TextView tw = findViewById(R.id.weightLabelVal);
+            TextView tg = findViewById(R.id.curWeightVal);
+            tw.setText(String.valueOf(prof.get(0).getWeight()));
+            tg.setText(String.valueOf(prof.get(0).getGoalWeight()));
 
         }
 
