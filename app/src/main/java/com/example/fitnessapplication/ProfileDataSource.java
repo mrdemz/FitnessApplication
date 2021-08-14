@@ -157,6 +157,22 @@ public class ProfileDataSource {
         return didSucceed;
     }
 
+    //marc
+    public boolean insertCalories(ExerciseModel em){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("calories_burned", em.getCalorieCount());
+        cv.put("exercise_name", em.getExerciseName());
+
+        long insert = db.insert("exercise_table", null, cv);
+        if (insert == -1){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
 
 

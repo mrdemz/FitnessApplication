@@ -26,4 +26,12 @@
     <string name="saveString">Save</string>
     <string name="goalWeightString">Goal Weight:</string>
     <string name="curWValString" />
+    <string name="bench_details">\u2022 Equipment: Barbel
+        \n\u2022 Body-part: Chest
+        \n\u2022 Target: Pectoralis Major Sternal Head
+        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</string>
+    <string name="instructions">\u2022 Repetition: 8 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest: 45-60 seconds between sets.
+    </string>
 </resources>

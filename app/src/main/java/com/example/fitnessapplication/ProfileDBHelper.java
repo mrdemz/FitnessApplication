@@ -17,6 +17,10 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
                     + "weight decimal not null, "
                     + "goalWeight decimal not null, "
                     + "height decimal not null);";
+    private static final String CREATE_TABLE_EXERCISE =
+            "create table exercise_table (id integer primary key autoincrement, "
+                    + "calories_burned text not null, "
+                    + "exercise_name text not null)";
 
     public ProfileDBHelper(Context context) { // a constructor method to call the superclass constructor
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,6 +29,7 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_SHOW);
+        db.execSQL(CREATE_TABLE_EXERCISE);
     } //method to create
 
     @Override

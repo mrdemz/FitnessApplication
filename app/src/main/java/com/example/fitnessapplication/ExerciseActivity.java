@@ -1,12 +1,14 @@
-package com.example.fitnessapplication;
+                                                                                                                                                                                                                                                                                                                                                                            package com.example.fitnessapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
-public class ExerciseActivity extends AppCompatActivity {
+                                                                                                                                                                                                                                                                                                                                                                            public class ExerciseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,7 @@ public class ExerciseActivity extends AppCompatActivity {
         initExerciseActivity();
         initNutritionActivity();
         initMeActivity();
+        benchPress();
     }
 
     private void initMeActivity(){
@@ -49,11 +52,8 @@ public class ExerciseActivity extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                 startActivity(intent);
-
             }
-
         });
-
     }
 
     private void initNutritionActivity(){
@@ -69,6 +69,15 @@ public class ExerciseActivity extends AppCompatActivity {
         View icon = findViewById(R.id.workoutView);
         icon.setOnClickListener(v -> {
             Intent intent = new Intent(ExerciseActivity.this, ExerciseActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+    }
+
+    private void benchPress(){
+        ImageView image = findViewById(R.id.benchPressImage);
+        image.setOnClickListener(v -> {
+            Intent intent = new Intent(ExerciseActivity.this, BenchPress.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
