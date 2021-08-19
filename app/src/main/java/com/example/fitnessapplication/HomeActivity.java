@@ -25,6 +25,8 @@ public class HomeActivity extends AppCompatActivity {
 
     ProfileDataSource profileDataSource = new ProfileDataSource(this);
     ArrayList<Profile> prof = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

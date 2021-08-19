@@ -3,10 +3,10 @@ package com.example.fitnessapplication;
 public class ExerciseModel {
 
     private int id;
-    private String calorieCount;
+    private int calorieCount;
     private String exerciseName;
 
-    public ExerciseModel(int id, String calorieCount, String exerciseName) {
+    public ExerciseModel(int id, int calorieCount, String exerciseName) {
         this.id = id;
         this.calorieCount = calorieCount;
         this.exerciseName = exerciseName;
@@ -20,11 +20,12 @@ public class ExerciseModel {
         this.id = id;
     }
 
-    public String getCalorieCount() {
+    public int getCalorieCount() {
         return calorieCount;
     }
 
-    public void setCalorieCount(String calorieCount) {
+    public void setCalorieCount(int calorieCount) {
+
         this.calorieCount = calorieCount;
     }
 

@@ -17,10 +17,11 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
                     + "weight decimal not null, "
                     + "goalWeight decimal not null, "
                     + "height decimal not null);";
+
     private static final String CREATE_TABLE_EXERCISE =
-            "create table exercise_table (id integer primary key autoincrement, "
-                    + "calories_burned text not null, "
-                    + "exercise_name text not null)";
+            "create table exercise_table (_id integer primary key autoincrement, "
+                    + "exercise_name text not null, "
+                    + "calories_burned int not null);";
 
     public ProfileDBHelper(Context context) { // a constructor method to call the superclass constructor
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,6 +39,7 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
         db.execSQL("DROP TABLE IF EXISTS profile");
+        db.execSQL("DROP TABLE IF EXISTS exercise_table");
         onCreate(db);
     }
 }

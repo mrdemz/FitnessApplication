@@ -1,5 +1,4 @@
 package com.example.fitnessapplication;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,7 +8,7 @@ import android.widget.Toast;
 
 public class BenchPress extends AppCompatActivity {
 
-
+    ProfileDataSource dataSource;
     private ExerciseModel exerciseModel;
 
     @Override
@@ -21,19 +20,28 @@ public class BenchPress extends AppCompatActivity {
 
     public void submit(){
         Button button = findViewById(R.id.submitButton);
-        EditText editText = findViewById(R.id.caloryBurnttext);
 
         button.setOnClickListener(v -> {
 
+            EditText editText = findViewById(R.id.caloryBurntText);
+
+
             try {
-                exerciseModel = new ExerciseModel(1, editText.getText().toString(), "Bench Press");
+
+                int caloriesBurned = Integer.parseInt(editText.getText().toString());
+                String exerciseName = "Bench Press";
+                exerciseModel = new ExerciseModel(-1, caloriesBurned, exerciseName);
+
+                dataSource = new ProfileDataSource(this);
+                boolean success = dataSource.insertCalories(exerciseModel);
+                Toast.makeText(BenchPress.this, "Success " + success, Toast.LENGTH_SHORT).show();
+
             } catch (Exception e){
-                Toast.makeText(BenchPress.this, "Input numbers only", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Input numbers only", Toast.LENGTH_SHORT).show();
+
             }
 
-            ProfileDataSource dataSource = new ProfileDataSource(this);
-            boolean success = dataSource.insertCalories(exerciseModel);
-            Toast.makeText(BenchPress.this, "Success= " + success, Toast.LENGTH_SHORT).show();
+            editText.setText("");
 
         });
     }
