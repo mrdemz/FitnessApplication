@@ -1,11 +1,20 @@
 package com.example.fitnessapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -21,7 +30,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements SensorEventListener {
+
+    private SensorManager sensorManager;
+    private Sensor mStepCounter;
+    private boolean isCounterSensorPresent;
+    private int stepCount = 0;
+
+    TextView textViewStepCounter;
+
 
     ProfileDataSource profileDataSource = new ProfileDataSource(this);
     ArrayList<Profile> prof = new ArrayList<>();
@@ -29,6 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         profileDataSource.open();
         if(profileDataSource.getCount() == 0){
             AlertDialog.Builder newUserDialog = new AlertDialog.Builder(HomeActivity.this);
@@ -49,9 +67,27 @@ public class HomeActivity extends AppCompatActivity {
           prof =  profileDataSource.getProfile();
           TextView tw = findViewById(R.id.weightLabelVal);
             TextView tg = findViewById(R.id.curWeightVal);
-            tw.setText(String.valueOf(prof.get(0).getWeight()));
-            tg.setText(String.valueOf(prof.get(0).getGoalWeight()));
+            tw.setText(String.valueOf(prof.get(0).getGoalWeight()));
+            tg.setText(String.valueOf(prof.get(0).getWeight()));
 
+        }
+
+
+
+
+
+
+
+        textViewStepCounter = findViewById(R.id.stepsValueLabel);
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null){
+            mStepCounter = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+            isCounterSensorPresent = true;
+        }else{
+            textViewStepCounter.setText("Sensor Not Present");
+            isCounterSensorPresent = false;
         }
 
 
@@ -159,6 +195,38 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if(event.sensor == mStepCounter){
+            stepCount = (int) event.values[0];
+            textViewStepCounter.setText(String.valueOf(stepCount));
+        }
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!= null)
+            sensorManager.registerListener(this, mStepCounter, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+   
+
+    }
+
+
+
 
 
 }

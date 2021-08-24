@@ -26,4 +26,6 @@
     <string name="saveString">Save</string>
     <string name="goalWeightString">Goal Weight:</string>
     <string name="curWValString" />
+    <string name="todayStepString">Today\'s Steps:</string>
+    <string name="todayStepsValString" />
 </resources>
