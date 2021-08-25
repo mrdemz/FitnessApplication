@@ -78,13 +78,14 @@ public class ProfileActivity extends AppCompatActivity {
         EditText editAge = findViewById(R.id.ageEditText);
         EditText editWeight = findViewById(R.id.heightEditText);
         EditText editHeight = findViewById(R.id.weightEditText);
+        EditText editGoalWeight = findViewById(R.id.goalWeightEditText);
 
         /*findViewById(R.id.editTextVaccineName).setEnabled(enabled); this is possible too*/
         editName.setEnabled(enabled);
         editAge.setEnabled(enabled);
         editWeight.setEnabled(enabled);
         editHeight.setEnabled(enabled);
-
+        editGoalWeight.setEnabled(enabled);
     }
 
 

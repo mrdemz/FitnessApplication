@@ -1,12 +1,13 @@
 package com.example.fitnessapplication;
 
 public class Profile {
- private int profileId;
- private String name;
- private int age;
- private double weight;
+    private String name;
+    private int profileId;
+    private int age;
+    private double weight;
     private double goalWeight;
- private double height;
+    private double height;
+
 
 
     public Profile() {
@@ -69,5 +70,6 @@ public class Profile {
 
         this.height = height;
     }
+
 
 }
