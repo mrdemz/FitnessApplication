@@ -18,13 +18,23 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
                     + "goalWeight decimal not null, "
                     + "height decimal not null);";
 
+    private static final String CREATE_TABLE_PEDOMETER = //a string variable for query
+            "create table pedometer (_id integer primary key autoincrement, "
+                    + "date text not null, "
+                    + "answer text not null, "
+                    + "steps int not null);";
+
     public ProfileDBHelper(Context context) { // a constructor method to call the superclass constructor
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(CREATE_TABLE_SHOW);
+        db.execSQL(CREATE_TABLE_PEDOMETER);
     } //method to create
 
     @Override
@@ -33,6 +43,7 @@ public class ProfileDBHelper extends SQLiteOpenHelper { // a subclass of SQLiteO
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
         db.execSQL("DROP TABLE IF EXISTS profile");
+        db.execSQL("DROP TABLE IF EXISTS pedometer");
         onCreate(db);
     }
 }

@@ -88,7 +88,7 @@
                 app:layout_constraintTop_toTopOf="@+id/progressBar" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/todaysWorkoutLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -103,41 +103,19 @@
                 android:layout_width="393dp"
                 android:layout_height="0dp"
 
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="150dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/progressBar">
 
                 <com.github.mikephil.charting.charts.BarChart
                     android:id="@+id/barChart"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="200dp"
                     android:layout_marginTop="50dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/todayStepString"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/stepsValueLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/todayStepsValString"
-                    app:layout_constraintStart_toEndOf="@+id/textView"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,6 +129,69 @@
                 android:text="@string/curWValString"
                 app:layout_constraintBaseline_toBaselineOf="@id/currentWeightLabel"
                 app:layout_constraintStart_toEndOf="@+id/currentWeightLabel" />
+
+            <TextView
+                android:id="@+id/stepsValueLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/todayStepsValString"
+                app:layout_constraintBaseline_toBaselineOf="@id/todayStepsLabel"
+                app:layout_constraintStart_toEndOf="@+id/todayStepsLabel" />
+
+            <TextView
+                android:id="@+id/todayStepsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/todayStepString"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/todaysWorkoutLabel" />
+
+            <TextView
+                android:id="@+id/bmiLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/bmiString"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateLabel" />
+
+            <TextView
+                android:id="@+id/bmiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/bmiValString"
+                app:layout_constraintBaseline_toBaselineOf="@id/bmiLabel"
+                app:layout_constraintStart_toEndOf="@+id/bmiLabel" />
+
+            <TextView
+                android:id="@+id/todayMilesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/todayMilesString"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/todayStepsLabel" />
+
+            <TextView
+                android:id="@+id/todayMilesVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/todayMilesValString"
+                app:layout_constraintBaseline_toBaselineOf="@id/todayMilesLabel"
+                app:layout_constraintStart_toEndOf="@+id/todayMilesLabel" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

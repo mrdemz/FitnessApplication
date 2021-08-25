@@ -28,4 +28,8 @@
     <string name="curWValString" />
     <string name="todayStepString">Today\'s Steps:</string>
     <string name="todayStepsValString" />
+    <string name="bmiString">BMI:</string>
+    <string name="bmiValString" />
+    <string name="todayMilesString">Distance Traveled:</string>
+    <string name="todayMilesValString" />
 </resources>
