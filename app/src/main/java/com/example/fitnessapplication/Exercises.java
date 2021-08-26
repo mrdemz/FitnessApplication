@@ -2,23 +2,43 @@ package com.example.fitnessapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class BenchPress extends AppCompatActivity {
+public class Exercises extends AppCompatActivity {
 
     ProfileDataSource dataSource;
     private ExerciseModel exerciseModel;
+    ImageView image;
+    TextView name, details, instructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bench_press);
-        submit();
+
+        image = findViewById(R.id.exercisePic);
+        name = findViewById(R.id.textViewName);
+        details = findViewById(R.id.details);
+        instructions = findViewById(R.id.instructions);
+
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null){
+            int exImage = bundle.getInt("exerciseImage");
+            image.setImageResource(exImage);
+        }
+
+        String exName = bundle.getString("exerciseName");
+        String exDetails = bundle.getString("exerciseDetail");
+        String exInstructions = bundle.getString("exerciseInstruction");
+
+        name.setText(exName);
+        details.setText(exDetails);
+        instructions.setText(exInstructions);
     }
 
-    public void submit(){
+    /*public void submit(){
         Button button = findViewById(R.id.submitButton);
 
         button.setOnClickListener(v -> {
@@ -44,5 +64,5 @@ public class BenchPress extends AppCompatActivity {
             editText.setText("");
 
         });
-    }
+    }*/
 }

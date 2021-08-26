@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".NutritionActivity"></activity>
+        <activity
+            android:name=".Exercises"
+            android:exported="true" />
+        <activity android:name=".NutritionActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ExerciseActivity" />
         <activity android:name=".MainActivity" />

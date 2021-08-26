@@ -85,14 +85,14 @@
                 android:layout_marginBottom="10dp"/>
 
             <TextView
+                android:id="@+id/specialText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Warm Up"
-                android:textStyle="bold"
+                android:layout_below="@+id/exercises"
+                android:text="Back Exercise"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:id="@+id/specialText"
-                android:layout_below="@+id/exercises"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
                 android:id="@+id/scrollView"
@@ -104,48 +104,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp">
+
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/wholeBodyImage"
+                        android:id="@+id/back0"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/whole_body_warmup"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:src="@drawable/lat_pulldown"
+                        android:tint="#64000000" />
                     <TextView
-                        android:id="@+id/wholeBodytext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/wholeBodyImage"
-                        android:text="Whole Body Warm up"
+                        android:layout_alignLeft="@+id/back0"
+                        android:text="Lat Pulldown"
                         android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/upperBodyImage"
+                        android:id="@+id/back1"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/upper_warmup"
-                        android:layout_toRightOf="@+id/wholeBodyImage"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:layout_toRightOf="@+id/back0"
+                        android:src="@drawable/bent_over_lateral_raise"
+                        android:tint="#64000000" />
 
                     <TextView
-                        android:id="@+id/upperBodyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/upperBodyImage"
-                        android:text="Upper Body Warmp up"
+                        android:layout_alignLeft="@+id/back1"
+                        android:text="Bent Over Lateral Raise"
                         android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/lowerBodyImage"
+                        android:id="@+id/back2"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/lower_warmup"
-                        android:layout_toRightOf="@+id/upperBodyImage"
+                        android:src="@drawable/barbell_row"
+                        android:layout_toRightOf="@+id/back1"
                         android:layout_marginRight="10dp"
                         android:tint="#64000000"/>
 
@@ -153,8 +152,62 @@
                         android:id="@+id/lowerBodyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/lowerBodyImage"
-                        android:text="Lower Body Warm up"
+                        android:layout_alignLeft="@+id/back2"
+                        android:text="Barbell Row"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/back3"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/butterfly_reverse"
+                        android:layout_toRightOf="@+id/back2"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/back3"
+                        android:text="Butterfly Reverse Machine"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/back4"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/dumbbell_row"
+                        android:layout_toRightOf="@+id/back3"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/back4"
+                        android:text="Dumbbell Row"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/back5"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/pull_ups"
+                        android:layout_toRightOf="@+id/back4"
+                        android:layout_marginRight="10dp"
+                        android:tint="#64000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/back5"
+                        android:text="Pull Ups"
                         android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"/>
@@ -188,7 +241,7 @@
                     android:padding="10dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/benchPressImage"
+                        android:id="@+id/chest0"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
                         android:layout_marginRight="10dp"
@@ -205,11 +258,11 @@
                         android:layout_marginTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/dumbbellPressImage"
+                        android:id="@+id/chest1"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
                         android:layout_marginRight="10dp"
-                        android:layout_toRightOf="@+id/benchPressImage"
+                        android:layout_toRightOf="@+id/chest0"
                         android:src="@drawable/dumbbell_press"
                         android:tint="#64000000" />
 
@@ -217,18 +270,18 @@
                         android:id="@+id/dumbbellPressText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/dumbbellPressImage"
+                        android:layout_alignLeft="@+id/chest1"
                         android:text="Dumbbell Press"
                         android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/cableFlyImage"
+                        android:id="@+id/chest2"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/cable_fly"
-                        android:layout_toRightOf="@+id/dumbbellPressImage"
+                        android:src="@drawable/butterfly_machine"
+                        android:layout_toRightOf="@+id/chest1"
                         android:layout_marginRight="10dp"
                         android:tint="#64000000"/>
 
@@ -236,7 +289,7 @@
                         android:id="@+id/cableFlyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/cableFlyImage"
+                        android:layout_alignLeft="@+id/chest2"
                         android:text="Cable Fly"
                         android:textColor="@color/white"
                         android:layout_marginLeft="10dp"

@@ -160,7 +160,7 @@ public class ProfileDataSource {
     }
 
     //marc
-    public boolean insertCalories(ExerciseModel em){
+    public boolean insertCalories(@NonNull ExerciseModel em){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
