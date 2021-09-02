@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercise_details">
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 12 - 15
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 8 - 10
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+
+        <item>\u2022 Repetition: 6 - 8
+        \n\u2022 Sets: 5
+        \n\u2022 Rest 60 - 90 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 12 - 15
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+
+        <item>\u2022 Repetition: 6 - 8
+        \n\u2022 Sets: 5
+        \n\u2022 Rest 60 - 90 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 12 - 15
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 8 - 10
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+
+        <item>\u2022 Repetition: 5 - 8
+        \n\u2022 Sets: 5
+        \n\u2022 Rest 60 - 90 seconds between sets</item>
+        <item>\u2022 Repetition: 8 - 10
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+        <item>\u2022 Repetition: 10 - 12
+        \n\u2022 Sets: 3
+        \n\u2022 Rest 50 - 60 seconds between sets</item>
+
+        <item></item>
+    </string-array>
+</resources>

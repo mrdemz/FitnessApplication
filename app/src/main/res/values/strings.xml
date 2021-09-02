@@ -40,68 +40,10 @@
         \n\u2022 Sets: 3
         \n\u2022 Rest: 45-60 seconds between sets.
     </string>
-    <string-array name="exercise_names">
-        <item>Lat Pulldown</item>
-        <item>Bent Over Lat Raise</item>
-        <item>Barbell Row</item>
-        <item>Butterfly Reverse Machine</item>
-        <item>Dumbbell Row</item>
-        <item>Lat Pulldown</item>
-        <item>Bench Press</item>
-        <item>Dumbbell Press</item>
-        <item>Cable Fly</item>
-    </string-array>
 
-    <string-array name="exercise_details">
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Upper Body
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item> <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item> <item>\u2022 Equipment: Barbel
-        \n\u2022 Body-part: Chest
-        \n\u2022 Target: Pectoralis Major Sternal Head
-        \n\u2022 Synergist: Deltoid Anterior, Pectoralis Major Clavicular Head,\n\t Triceps Brachii</item>
-        <item></item>
-    </string-array>
 
-    <string-array name="exercise_instructions">
-        <item>Whole Body Warm up</item>
-        <item>Upper Body Warm up</item>
-        <item>Lower Body Warm up</item>
-        <item>\u2022 Repetition: 8 - 12
-        \n\u2022 Sets: 3
-        \n\u2022 Rest: 45-60 seconds between sets.</item>
-        <item>Dumbbell Press</item>
-        <item>Cable Fly</item>
-        <item>Military Press</item>
-        <item>Arnold Press</item>
-        <item>Lateral Raise</item>
-        <item></item>
-    </string-array>
+
+
+
+
 </resources>

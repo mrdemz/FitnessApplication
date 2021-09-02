@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercise_names">
+        <item>Lat Pulldown</item>
+        <item>Bent Over Lat Raise</item>
+        <item>Pull Ups</item>
+        <item>Dumbbell Row</item>
+
+        <item>Bench Press</item>
+        <item>Dumbbell Press</item>
+        <item>Cable Fly</item>
+        <item>Dumbbell Pullover</item>
+
+        <item>Military Press</item>
+        <item>Shoulder Press</item>
+        <item>Cable Fly</item>
+        <item>Upright Row</item>
+
+        <item>Bicep Curls</item>
+        <item>Concentration Curls</item>
+        <item>Cable Fly</item>
+        <item>Upright Row</item>
+
+        <item>Squat</item>
+        <item>Side Squat</item>
+        <item>Lunges</item>
+        <item>Sumo Squat</item>
+
+    </string-array>
+</resources>

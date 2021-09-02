@@ -54,16 +54,12 @@
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="649dp"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
         android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cardView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -79,10 +75,10 @@
                 android:id="@+id/exercises"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Exercises"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/specialText"
@@ -95,7 +91,7 @@
                 android:textStyle="bold" />
 
             <HorizontalScrollView
-                android:id="@+id/scrollView"
+                android:id="@+id/backScroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/specialText">
@@ -112,14 +108,15 @@
                         android:layout_marginRight="10dp"
                         android:src="@drawable/lat_pulldown"
                         android:tint="#64000000" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/back0"
-                        android:text="Lat Pulldown"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Lat Pulldown"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/back1"
@@ -134,83 +131,47 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/back1"
-                        android:text="Bent Over Lateral Raise"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Bent Over Lateral Raise"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/back2"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/barbell_row"
-                        android:layout_toRightOf="@+id/back1"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:layout_toRightOf="@+id/back1"
+                        android:src="@drawable/pull_ups"
+                        android:tint="#64000000" />
 
                     <TextView
                         android:id="@+id/lowerBodyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/back2"
-                        android:text="Barbell Row"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Pull Ups"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/back3"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/butterfly_reverse"
-                        android:layout_toRightOf="@+id/back2"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:layout_toRightOf="@+id/back2"
+                        android:src="@drawable/dumbbell_row"
+                        android:tint="#64000000" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/back3"
-                        android:text="Butterfly Reverse Machine"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/back4"
-                        android:layout_width="170dp"
-                        android:layout_height="120dp"
-                        android:src="@drawable/dumbbell_row"
-                        android:layout_toRightOf="@+id/back3"
-                        android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/back4"
+                        android:layout_marginTop="15dp"
                         android:text="Dumbbell Row"
-                        android:textColor="@color/white"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/back5"
-                        android:layout_width="170dp"
-                        android:layout_height="120dp"
-                        android:src="@drawable/pull_ups"
-                        android:layout_toRightOf="@+id/back4"
-                        android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/back5"
-                        android:text="Pull Ups"
-                        android:textColor="@color/white"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:textColor="@color/white" />
 
 
                 </RelativeLayout>
@@ -221,15 +182,15 @@
                 android:id="@+id/scrollText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/backScroll"
+                android:layout_marginTop="10dp"
                 android:text="Chest Exercise"
-                android:layout_below="@+id/scrollView"
-                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:layout_marginTop="10dp"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
-                android:id="@+id/healthyScrollView"
+                android:id="@+id/chestScroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/scrollText">
@@ -252,10 +213,10 @@
                         android:id="@+id/benchPressText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bench Press"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Bench Press"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/chest1"
@@ -271,29 +232,48 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/chest1"
-                        android:text="Dumbbell Press"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Dumbbell Press"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/chest2"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/butterfly_machine"
-                        android:layout_toRightOf="@+id/chest1"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:layout_toRightOf="@+id/chest1"
+                        android:src="@drawable/butterfly_machine"
+                        android:tint="#64000000" />
 
                     <TextView
                         android:id="@+id/cableFlyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/chest2"
-                        android:text="Cable Fly"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Cable Fly"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/chest3"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/chest2"
+                        android:src="@drawable/dumbbell_pullover"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/dumbbellPulloverText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/chest3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Dumbbell Pullover"
+                        android:textColor="@color/white" />
 
                 </RelativeLayout>
 
@@ -303,15 +283,15 @@
                 android:id="@+id/scrollText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/chestScroll"
+                android:layout_marginTop="10dp"
                 android:text="Shoulder Exercise"
-                android:layout_below="@+id/healthyScrollView"
-                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:layout_marginTop="10dp"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
-                android:id="@+id/pizzaScrollView"
+                android:id="@+id/shoulderScroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/scrollText3">
@@ -322,59 +302,280 @@
                     android:padding="10dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/militaryPressImage"
+                        android:id="@+id/shoulder0"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/military_press"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:src="@drawable/military_press"
+                        android:tint="#64000000" />
 
                     <TextView
                         android:id="@+id/militaryPressText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Military Press"
-                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Military Press"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/arnoldPressImage"
+                        android:id="@+id/shoulder1"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/arnold_press"
-                        android:layout_toRightOf="@+id/militaryPressImage"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:layout_toRightOf="@+id/shoulder0"
+                        android:src="@drawable/arnold_press"
+                        android:tint="#64000000" />
 
                     <TextView
                         android:id="@+id/arnoldPressText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/arnoldPressImage"
-                        android:text="Arnold Press"
-                        android:textColor="@color/white"
+                        android:layout_alignLeft="@+id/shoulder1"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Shoulder Press"
+                        android:textColor="@color/white" />
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/lateralRaiseImage"
+                        android:id="@+id/shoulder2"
                         android:layout_width="170dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/lateral_raise"
-                        android:layout_toRightOf="@+id/arnoldPressImage"
                         android:layout_marginRight="10dp"
-                        android:tint="#64000000"/>
+                        android:layout_toRightOf="@+id/shoulder1"
+                        android:src="@drawable/lateral_raise"
+                        android:tint="#64000000" />
 
                     <TextView
                         android:id="@+id/lateralRaiseText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/lateralRaiseImage"
-                        android:text="Lateral Raise"
-                        android:textColor="@color/white"
+                        android:layout_alignLeft="@+id/shoulder2"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:text="Lateral Raise"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/shoulder3"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/shoulder2"
+                        android:src="@drawable/upright_row"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/uprightRowText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/shoulder3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Upright Row"
+                        android:textColor="@color/white" />
+
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/scrollText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shoulderScroll"
+                android:layout_marginTop="10dp"
+                android:text="Arms Exercise"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/armsScroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scrollText4">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arms0"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/bicep_curls"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/bicepCurlsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Bicep Curls"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arms1"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/arms0"
+                        android:src="@drawable/concentration_curls"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/concentrationCurlsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/arms1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Concentration Curls"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arms2"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/arms1"
+                        android:src="@drawable/triceps_press"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/tricepsPressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/arms2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Triceps Press"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arms3"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/arms2"
+                        android:src="@drawable/dips"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/dipsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/arms3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Dips"
+                        android:textColor="@color/white" />
+
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/scrollText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/armsScroll"
+                android:layout_marginTop="10dp"
+                android:text="Legs Exercise"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/legsScroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scrollText5">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/legs0"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/squat"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/squatText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Squat"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/legs1"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/legs0"
+                        android:src="@drawable/side_squat"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/sideSquatText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/legs1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Side Squat"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/legs2"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/legs1"
+                        android:src="@drawable/lunges"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/lungesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/legs2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Lunges"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/legs3"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/legs2"
+                        android:src="@drawable/sumo_squat"
+                        android:tint="#64000000" />
+
+                    <TextView
+                        android:id="@+id/sumoSquatText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/legs3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Sumo Squat"
+                        android:textColor="@color/white" />
 
 
                 </RelativeLayout>
