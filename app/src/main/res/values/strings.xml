@@ -22,6 +22,9 @@
     <string name="ageHInt"></string>
     <string name="weightHint"></string>
     <string name="heightHint"></string>
+    <string name="genderString">Gender:</string>
+    <string name="maleString">Male</string>
+    <string name="femaleString">Female</string>
     <string name="editString">Edit</string>
     <string name="saveString">Save</string>
     <string name="goalWeightString">Goal Weight:</string>
