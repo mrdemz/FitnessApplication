@@ -1,7 +1,9 @@
 package com.example.fitnessapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +13,7 @@ public class Exercises extends AppCompatActivity {
     private ExerciseModel exerciseModel;
     ImageView image;
     TextView name, details, instructions;
+    Button startB, endB, cancelB, backB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,17 @@ public class Exercises extends AppCompatActivity {
         name.setText(exName);
         details.setText(exDetails);
         instructions.setText(exInstructions);
+
+        backButton();
+    }
+
+    public void backButton(){
+        backB = findViewById(R.id.backButton);
+        backB.setOnClickListener(v->{
+            Intent intent = new Intent(this, ExerciseActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
     }
 
     /*public void submit(){
