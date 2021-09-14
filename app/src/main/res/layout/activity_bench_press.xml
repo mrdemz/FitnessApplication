@@ -170,29 +170,16 @@
                     android:layout_height="wrap_content"
                     android:text="End"
                     app:layout_constraintLeft_toRightOf="@id/startButton"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/cancelButton"/>
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
                 <Button
                     android:id="@+id/cancelButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:text="Cancel"
-                    app:layout_constraintLeft_toRightOf="@id/endButton"
-                    app:layout_constraintRight_toLeftOf="@id/backButton"
-                    app:layout_constraintStart_toEndOf="@+id/endButton"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/backButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Back"
+                    android:text="Cancel"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/cancelButton"
-                    app:layout_constraintStart_toEndOf="@+id/cancelButton"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

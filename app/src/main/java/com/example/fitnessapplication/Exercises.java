@@ -40,11 +40,21 @@ public class Exercises extends AppCompatActivity {
         details.setText(exDetails);
         instructions.setText(exInstructions);
 
-        backButton();
+        endButton();
+        cancelButton();
     }
 
-    public void backButton(){
-        backB = findViewById(R.id.backButton);
+    public void endButton(){
+        backB = findViewById(R.id.endButton);
+        backB.setOnClickListener(v->{
+            Intent intent = new Intent(this, ExerciseActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+    }
+
+    public void cancelButton(){
+        backB = findViewById(R.id.cancelButton);
         backB.setOnClickListener(v->{
             Intent intent = new Intent(this, ExerciseActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
