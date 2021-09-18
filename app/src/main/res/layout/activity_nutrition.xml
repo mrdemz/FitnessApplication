@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="#ECECEC">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#bcd1cd"
+            android:background="@color/white"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
@@ -54,13 +54,11 @@
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="649dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,341 +67,311 @@
 
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp">
-
-            <TextView
-                android:id="@+id/weekText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Week 1"
-                android:layout_marginBottom="10dp"/>
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/calendar"
-                android:layout_toRightOf="@+id/weekText"
-                android:layout_marginLeft="300dp"/>
 
             <TextView
                 android:id="@+id/today"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="Today"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_below="@+id/weekText"/>
+                android:text="@string/nutritionString"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewCalories"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/today"
                 android:elevation="10dp"
-                app:cardCornerRadius="15dp"
-                android:padding="10dp">
+                android:padding="10dp"
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ProgressBar
-                        android:id="@+id/progressBar3"
-                        style="?android:attr/progressBarStyleHorizontal"
+                    <TextView
+                        android:id="@+id/percentTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="100dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/progressBar4"
-                        app:layout_constraintHorizontal_bias="0.464"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.653" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBar4"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="100dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.653" />
+                        android:text="@string/calPercentString"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/calorieProgressBarNutrition"
+                        app:layout_constraintEnd_toEndOf="@+id/calorieProgressBarNutrition"
+                        app:layout_constraintStart_toStartOf="@+id/calorieProgressBarNutrition"
+                        app:layout_constraintTop_toTopOf="@+id/calorieProgressBarNutrition" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar5"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="100dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/progressBar4"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.653" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBar6"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar4"
+                        android:id="@+id/calorieProgressBarNutrition"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:indeterminateOnly="false"
+                        android:progressDrawable="@drawable/calorie_progress"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@+id/calRatioVal2"
+                        tools:progress="10" />
 
                     <TextView
-                        android:id="@+id/goalWeightLabel"
+                        android:id="@+id/calRatioVal2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Eaten"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar3"
-                        app:layout_constraintEnd_toStartOf="@+id/progressBar6"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Remaining"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/progressBar6"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar3"
-                        app:layout_constraintEnd_toStartOf="@+id/nameLabel"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/goalWeightLabel"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <TextView
-                        android:id="@+id/nameLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="Carbs"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar4"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/calRatioString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/progressBar6"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <TextView
-                        android:id="@+id/ageLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fat"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/nameLabel"
-                        app:layout_constraintTop_toBottomOf="@+id/textView4"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <TextView
-                        android:id="@+id/weightProfileLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0/100g"
-                        app:layout_constraintEnd_toStartOf="@+id/heightLabel"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
-
-                    <TextView
-                        android:id="@+id/heightLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0/100g"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/progressBar4"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0/100g"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/heightLabel"
-                        app:layout_constraintTop_toBottomOf="@+id/progressBar5" />
+                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                     <TextView
                         android:id="@+id/textView11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
                         android:text="Calories"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBar6"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
+
             <TextView
                 android:id="@+id/foodText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Food"
                 android:layout_below="@+id/cardViewCalories"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:text="@string/foodString"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/breakfastCardView"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/foodText"
+                android:layout_marginTop="10dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp">
-                <RelativeLayout
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageButton
+                        android:id="@+id/addBreakfastButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/add"/>
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:text="Breakfast"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"/>
-                </RelativeLayout>
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/bfastValLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/bfastValueString"
+                        android:textColor="#76F87B"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/addBreakfastButton"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/lunchCardView"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/breakfastCardView"
+                android:layout_marginTop="10dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp">
 
-                <RelativeLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/relativeLayout4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageButton
+                        android:id="@+id/addLunchButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/add"/>
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:text="Lunch"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"/>
-                </RelativeLayout>
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lunchValLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/lunchValString"
+                        android:textColor="#76F87B"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/addLunchButton"
+                        app:layout_constraintStart_toEndOf="@+id/textView4"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/dinnerCardView"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/lunchCardView"
+                android:layout_marginTop="10dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp">
-                <RelativeLayout
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/relativeLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageButton
+                        android:id="@+id/addDinnerButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/add"/>
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:text="Dinner"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"/>
-                </RelativeLayout>
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/dinnerValLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/dinnerValString"
+                        android:textColor="#76F87B"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/addDinnerButton"
+                        app:layout_constraintStart_toEndOf="@+id/textView2"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/snacksCardView"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/dinnerCardView"
+                android:layout_marginTop="10dp"
                 android:elevation="10dp"
+                android:paddingBottom="15dp"
                 app:cardCornerRadius="10dp">
-                <RelativeLayout
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/relativeLayout3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageButton
+                        android:id="@+id/addSnacksButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/add"/>
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:text="Snacks"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"/>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/waterText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Water"
-                android:layout_below="@+id/snacksCardView"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="@color/black"/>
-
-            <androidx.cardview.widget.CardView
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/waterText"
-                android:elevation="10dp"
-                app:cardCornerRadius="10dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/snacksValLabel"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/add"/>
-                </RelativeLayout>
-
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/snacksValString"
+                        android:textColor="#76F87B"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/addSnacksButton"
+                        app:layout_constraintStart_toEndOf="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
         </RelativeLayout>
     </ScrollView>
 

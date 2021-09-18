@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/drawable/ic_steps.xml" value="0.19814814814814816" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_add_food.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_bench_press.xml" value="0.33" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_exercise.xml" value="0.1726851851851852" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_food_selection.xml" value="0.33" />
         <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_nutrition.xml" value="0.33" />
         <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/custom_logo.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/bellj/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/item_layout.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/mrcal/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_bench_press.xml" value="0.33" />
         <entry key="..\:/Users/mrcal/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_exercise.xml" value="0.5098983413590155" />
         <entry key="..\:/Users/mrcal/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_home.xml" value="0.4322916666666667" />

@@ -3,10 +3,14 @@ package com.example.fitnessapplication;
 public class Profile {
     private String name;
     private int profileId;
+    private int gender;
     private int age;
+    private int activity;
     private double weight;
-    private double goalWeight;
+    private int fitness_goal;
     private double height;
+    private int stepsGoal;
+
 
 
 
@@ -42,6 +46,19 @@ public class Profile {
         this.age = age;
     }
 
+
+    public int getGender() {
+
+        return gender;
+    }
+
+    public void setGender(int gender) {
+
+        this.gender = gender;
+    }
+
+
+
     public double getWeight() {
 
         return weight;
@@ -53,12 +70,12 @@ public class Profile {
     }
     public double getGoalWeight() {
 
-        return goalWeight;
+        return fitness_goal;
     }
 
-    public void setGoalWeight(double goalWeight) {
+    public void setGoalWeight(int fitness_goal) {
 
-        this.goalWeight = goalWeight;
+        this.fitness_goal = fitness_goal;
     }
 
     public double getHeight() {
@@ -70,6 +87,27 @@ public class Profile {
 
         this.height = height;
     }
+
+    public int getActivity() {
+
+        return activity;
+    }
+
+    public void setActivity(int activity) {
+
+        this.activity = activity;
+    }
+
+    public int getStepsGoal() {
+
+        return stepsGoal;
+    }
+
+    public void setStepsGoal(int stepsGoal) {
+
+        this.stepsGoal = stepsGoal;
+    }
+
 
 
 }

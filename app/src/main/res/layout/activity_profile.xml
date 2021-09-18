@@ -5,34 +5,55 @@
     android:id="@+id/homeMainConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:ignore="LabelFor"
-    tools:context=".HomeActivity">
+    android:background="#ECECEC"
+    tools:context=".HomeActivity"
+    tools:ignore="LabelFor">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ToggleButton
-            android:id="@+id/editToggle"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/editString"
-            android:textOff="@string/editString" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/saveString" />
-    </LinearLayout>
+            <ToggleButton
+                android:id="@+id/editToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editString"
+                android:textOff="@string/editString" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/saveString" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="384dp"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -46,7 +67,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#bcd1cd"
+            android:background="@color/white"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
@@ -56,8 +77,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/goal_icon"
-                android:contentDescription="TODO" />
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/goal_icon" />
 
             <ImageView
                 android:id="@+id/workoutView"
@@ -100,197 +121,417 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="50dp">
 
-            <ImageView
-                android:id="@+id/profile_ImgView2"
-                android:layout_width="165dp"
-                android:layout_height="181dp"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/circ_border"
-                android:contentDescription="@string/profImg_string"
-                android:cropToPadding="true"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/basicInfoCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/home_icon" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/nameLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="100dp"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:text="@string/nameString"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_ImgView2" />
-
-            <TextView
-                android:id="@+id/ageLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:text="@string/ageString"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/genderLabel" />
-
-            <TextView
-                android:id="@+id/weightProfileLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:text="@string/weightString"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
-
-            <TextView
-                android:id="@+id/heightLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:text="@string/heightString"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weightProfileLabel" />
-
-            <EditText
-                android:id="@+id/nameEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:ems="10"
-                android:enabled="false"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/nameHint"
-                app:layout_constraintBaseline_toBaselineOf="@id/nameLabel"
-                app:layout_constraintStart_toEndOf="@+id/nameLabel"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <EditText
-                android:id="@+id/ageEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:enabled="false"
-                android:importantForAutofill="no"
-                android:inputType="number|text"
-                android:text="@string/ageHInt"
-                app:layout_constraintBaseline_toBaselineOf="@id/ageLabel"
-                app:layout_constraintStart_toStartOf="@id/nameEditText"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <EditText
-                android:id="@+id/weightEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:enabled="false"
-                android:importantForAutofill="no"
-                android:inputType="none|numberDecimal"
-                android:text="@string/weightHint"
-                app:layout_constraintBaseline_toBaselineOf="@id/weightProfileLabel"
-                app:layout_constraintStart_toStartOf="@id/nameEditText"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-            <EditText
-                android:id="@+id/heightEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:enabled="false"
-                android:importantForAutofill="no"
-                android:inputType="none|numberDecimal"
-                android:text="@string/heightHint"
-                app:layout_constraintBaseline_toBaselineOf="@id/heightLabel"
-                app:layout_constraintStart_toStartOf="@id/nameEditText"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:id="@+id/goalWeightLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:text="@string/goalWeightString"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/heightLabel" />
-
-            <EditText
-                android:id="@+id/goalWeightEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:enabled="false"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                app:layout_constraintBaseline_toBaselineOf="@id/goalWeightLabel"
-                app:layout_constraintStart_toStartOf="@id/nameEditText"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/genderLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:text="@string/genderString"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
-
-            <RadioGroup
-                android:id="@+id/genderGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="25dp"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toEndOf="@+id/genderLabel"
-                app:layout_constraintTop_toBottomOf="@+id/nameEditText">
-
-                <RadioButton
-                    android:id="@+id/radioButton5"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/maleString" />
+                    android:layout_height="match_parent">
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
+                    <TextView
+                        android:id="@+id/genderLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/genderString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+
+                    <EditText
+                        android:id="@+id/heightEditText"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:importantForAutofill="no"
+                        android:inputType="none|numberDecimal"
+                        android:text="@string/heightHint"
+                        app:layout_constraintBaseline_toBaselineOf="@id/heightLabel"
+                        app:layout_constraintStart_toStartOf="@id/nameEditText"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <EditText
+                        android:id="@+id/weightEditText"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:importantForAutofill="no"
+                        android:inputType="none|numberDecimal"
+                        android:text="@string/weightHint"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/weightProfileLabel"
+                        app:layout_constraintStart_toStartOf="@id/nameEditText"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <EditText
+                        android:id="@+id/ageEditText"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:importantForAutofill="no"
+                        android:inputType="number|text"
+                        android:text="@string/ageHInt"
+                        app:layout_constraintBaseline_toBaselineOf="@id/ageLabel"
+                        app:layout_constraintStart_toStartOf="@id/nameEditText"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:text="@string/nameHint"
+                        app:layout_constraintBaseline_toBaselineOf="@id/nameLabel"
+                        app:layout_constraintStart_toEndOf="@+id/nameLabel"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/heightLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="50dp"
+                        android:text="@string/heightString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/weightProfileLabel" />
+
+                    <TextView
+                        android:id="@+id/weightProfileLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/weightString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
+
+                    <TextView
+                        android:id="@+id/ageLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/ageString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/genderLabel" />
+
+                    <TextView
+                        android:id="@+id/nameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="70dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/nameString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/genderGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="@id/nameEditText"
+                        app:layout_constraintTop_toBottomOf="@+id/nameEditText">
+
+                        <RadioButton
+                            android:id="@+id/maleRad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:minHeight="48dp"
+                            android:paddingEnd="10dp"
+                            android:text="@string/maleString"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/femaleRad"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:text="@string/femaleString"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/basicInfoString"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/lbUnitString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/weightEditText"
+                        app:layout_constraintStart_toEndOf="@+id/weightEditText" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/inUnitString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/heightEditText"
+                        app:layout_constraintStart_toEndOf="@+id/heightEditText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activityPrefCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/basicInfoCardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/femaleString"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </RadioGroup>
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:text="@string/activityString"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/goalRadGroup" />
+
+                    <TextView
+                        android:id="@+id/goalWeightLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/goalWeightString"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/targetStepsLabel" />
+
+                    <RadioGroup
+                        android:id="@+id/activityGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+                        <RadioButton
+                            android:id="@+id/act1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/bmrString" />
+
+                        <RadioButton
+                            android:id="@+id/act2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/sedentaryString" />
+
+                        <RadioButton
+                            android:id="@+id/act3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/lightString" />
+
+                        <RadioButton
+                            android:id="@+id/act4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/moderateString" />
+
+                        <RadioButton
+                            android:id="@+id/act5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/activeString" />
+
+                        <RadioButton
+                            android:id="@+id/act6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/veryActiveString" />
+
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/goalRadGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/goalWeightLabel">
+
+                        <RadioButton
+                            android:id="@+id/goal7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/maintainString" />
+
+                        <RadioButton
+                            android:id="@+id/goal1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/goal1" />
+
+                        <RadioButton
+                            android:id="@+id/goal2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/goal2String" />
+
+                        <RadioButton
+                            android:id="@+id/goal3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/goal3String" />
+
+                        <RadioButton
+                            android:id="@+id/goal4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/goal4String" />
+
+                        <RadioButton
+                            android:id="@+id/goal5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/goal5String" />
+
+                        <RadioButton
+                            android:id="@+id/goal6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="@string/goal6String" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/actPrefString"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/targetStepsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="70dp"
+                        android:text="@string/targetStepsString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/targetStepsEditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:inputType="number"
+                        app:layout_constraintBaseline_toBaselineOf="@id/targetStepsLabel"
+                        app:layout_constraintStart_toEndOf="@+id/targetStepsLabel" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/stepsDailyString"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/targetStepsEditText"
+                        app:layout_constraintStart_toEndOf="@+id/targetStepsEditText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

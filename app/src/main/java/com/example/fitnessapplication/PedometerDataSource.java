@@ -149,36 +149,9 @@ public class PedometerDataSource {
         return pedometerList;
     }
 
-    public ArrayList<Double> getPrices() {
-        ArrayList<Double> itemList = new ArrayList<Double>();
-        try {
-            String query = "SELECT * from item";
-            Cursor cursor = database.rawQuery(query, null);
-            double newItem;
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
 
-                newItem = cursor.getDouble(2);
-                itemList.add(newItem);
-                cursor.moveToNext();
-            }
-            cursor.close();
-        } catch (Exception exception) {
-            itemList = new ArrayList<Double>();
-        }
-        return itemList;
-    }
 
-    public boolean deleteItem(int itemID) {
-        boolean didDelete = false;
-        try {
-            /*A delete method requires the table to delete from and the where clause*/
-            didDelete = database.delete("item", "_id=" + itemID, null) > 0;
-        } catch (Exception e) {
-            //Do nothing - return value is alread set to false
-        }
-        return didDelete;
-    }
+
 
     public int getCount (){
         String count = "SELECT count(*) FROM pedometer";

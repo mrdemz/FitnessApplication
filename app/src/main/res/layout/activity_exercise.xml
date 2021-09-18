@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#bcd1cd"
+            android:background="@color/white"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
@@ -54,8 +54,8 @@
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_height="0dp"
         android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"

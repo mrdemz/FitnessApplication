@@ -6,15 +6,14 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-public class ProfileDataSource {
+public class ExerciseDataSource {
     private SQLiteDatabase database; //variables to hold instances of the database
     private ProfileDBHelper dbHelper; //variable to ref helper class
 
-    public ProfileDataSource(Context context) { //instantiating the helper class
+    public ExerciseDataSource(Context context) { //instantiating the helper class
 
         dbHelper = new ProfileDBHelper(context);
     }
@@ -29,20 +28,15 @@ public class ProfileDataSource {
     }
 
 
-    public boolean insertItem(Profile c) {
+    public boolean insertItem(Exercise c) {
         boolean didSucceed = false;
         try {
             ContentValues initialValues = new ContentValues();
 
-            initialValues.put("name", c.getName());
-            initialValues.put("gender", c.getGender());
-            initialValues.put("age", c.getAge());
-            initialValues.put("weight", c.getWeight());
-            initialValues.put("fitness_goal", c.getGoalWeight());
-            initialValues.put("height", c.getHeight());
-            initialValues.put("steps_goal", c.getStepsGoal());
-            initialValues.put("activity", c.getActivity());
-            didSucceed = database.insert("profile", null, initialValues) > 0;
+            initialValues.put("exercise_name", c.getExerciseName());
+            initialValues.put("exercise_date", c.getDate());
+
+            didSucceed = database.insert("exercise", null, initialValues) > 0;
         } catch (Exception e) {
             //Do nothing - will return false if there is no exception
         }
@@ -75,32 +69,26 @@ public class ProfileDataSource {
 
     }
 
-    public ArrayList<Profile> getProfile() {
-        ArrayList<Profile> profileList = new ArrayList<Profile>();
+    public ArrayList<Exercise> getExercise() {
+        ArrayList<Exercise> exerciseList = new ArrayList<Exercise>();
         try {
-            String query = "SELECT * from profile";
+            String query = "SELECT * from exercise";
             Cursor cursor = database.rawQuery(query, null);
-            Profile newItem;
+            Exercise newItem;
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                newItem = new Profile();
-                newItem.setProfileId(cursor.getInt(0));
-                newItem.setName(cursor.getString(1));
-                newItem.setGender(cursor.getInt(2));
-                newItem.setAge(cursor.getInt(3));
-                newItem.setWeight(cursor.getDouble(4));
-                newItem.setGoalWeight(cursor.getInt(5));
-                newItem.setHeight(cursor.getDouble(6));
-                newItem.setStepsGoal(cursor.getInt(7));
-                newItem.setActivity(cursor.getInt(8));
-                profileList.add(newItem);
+                newItem = new Exercise();
+                newItem.setExerciseId(cursor.getInt(0));
+                newItem.setExerciseName(cursor.getString(1));
+                newItem.setDate(cursor.getString(2));
+                exerciseList.add(newItem);
                 cursor.moveToNext();
             }
             cursor.close();
         } catch (Exception exception) {
-            profileList = new ArrayList<Profile>();
+            exerciseList = new ArrayList<Exercise>();
         }
-        return profileList;
+        return exerciseList;
     }
 
 
@@ -109,7 +97,7 @@ public class ProfileDataSource {
         boolean didDelete = false;
         try {
             /*A delete method requires the table to delete from and the where clause*/
-            didDelete = database.delete("item", "_id=" + itemID, null) > 0;
+            didDelete = database.delete("exercise", "_id=" + itemID, null) > 0;
         } catch (Exception e) {
             //Do nothing - return value is alread set to false
         }
@@ -117,7 +105,7 @@ public class ProfileDataSource {
     }
 
     public int getCount (){
-        String count = "SELECT count(*) FROM profile";
+        String count = "SELECT count(*) FROM exercise";
         Cursor mcursor = database.rawQuery(count, null);
         mcursor.moveToFirst();
         int icount = mcursor.getInt(0);
@@ -134,11 +122,8 @@ public class ProfileDataSource {
             updateValues.put("gender", c.getGender());
             updateValues.put("age", c.getAge());
             updateValues.put("weight", c.getWeight());
-            updateValues.put("fitness_goal", c.getGoalWeight());
+            updateValues.put("goalWeight", c.getGoalWeight());
             updateValues.put("height", c.getHeight());
-            updateValues.put("activity", c.getActivity());
-            updateValues.put("steps_goal", c.getStepsGoal());
-            updateValues.put("fitness_goal", c.getGoalWeight());
 
 
             didSucceed = database.update("profile", updateValues, "_id=" + rowId, null) > 0;
@@ -151,22 +136,5 @@ public class ProfileDataSource {
         return didSucceed;
     }
 
-    //marc
-    public boolean insertCalories(@NonNull ExerciseModel em){
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-
-        cv.put("calories_burned", em.getCalorieCount());
-        cv.put("exercise_name", em.getExerciseName());
-
-        long insert = db.insert("exercise_table", null, cv);
-        if (insert == -1){
-            return false;
-        } else {
-            return true;
-        }
-    }
 
 }
-
-

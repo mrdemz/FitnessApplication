@@ -2,8 +2,10 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -82,6 +84,8 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
         legs2.setOnClickListener(this);
         legs3 = findViewById(R.id.legs3);
         legs3.setOnClickListener(this);
+        initActionBarLogo();
+
 
     }
 
@@ -122,6 +126,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 back0i.putExtra("exerciseDetail", exerciseDetails[x]);
                 back0i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 back0i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                back0i.putExtras(bundle);
                 startActivity(back0i);
                 break;}
             case R.id.back1:{
@@ -132,6 +140,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 back1i.putExtra("exerciseDetail", exerciseDetails[x]);
                 back1i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 back1i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                back1i.putExtras(bundle);
                 startActivity(back1i);
                 break;}
             case R.id.back2:{
@@ -142,6 +154,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 back2i.putExtra("exerciseDetail", exerciseDetails[x]);
                 back2i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 back2i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                back2i.putExtras(bundle);
                 startActivity(back2i);
                 break;}
             case R.id.back3:{
@@ -152,6 +168,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 back3i.putExtra("exerciseDetail", exerciseDetails[x]);
                 back3i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 back3i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                back3i.putExtras(bundle);
                 startActivity(back3i);
                 break;}
 
@@ -163,6 +183,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 chest0i.putExtra("exerciseDetail", exerciseDetails[x]);
                 chest0i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 chest0i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                chest0i.putExtras(bundle);
                 startActivity(chest0i);
                 break;}
             case R.id.chest1:{
@@ -173,6 +197,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 chest1i.putExtra("exerciseDetail", exerciseDetails[x]);
                 chest1i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 chest1i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                chest1i.putExtras(bundle);
                 startActivity(chest1i);
                 break;}
             case R.id.chest2:{
@@ -183,6 +211,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 chest2i.putExtra("exerciseDetail", exerciseDetails[x]);
                 chest2i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 chest2i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                chest2i.putExtras(bundle);
                 startActivity(chest2i);
                 break;}
             case R.id.chest3:{
@@ -193,6 +225,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 chest3i.putExtra("exerciseDetail", exerciseDetails[x]);
                 chest3i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 chest3i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                chest3i.putExtras(bundle);
                 startActivity(chest3i);
                 break;}
 
@@ -204,6 +240,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 shoulder0i.putExtra("exerciseDetail", exerciseDetails[x]);
                 shoulder0i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 shoulder0i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                shoulder0i.putExtras(bundle);
                 startActivity(shoulder0i);
                 break;}
             case R.id.shoulder1:{
@@ -214,6 +254,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 shoulder1i.putExtra("exerciseDetail", exerciseDetails[x]);
                 shoulder1i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 shoulder1i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                shoulder1i.putExtras(bundle);
                 startActivity(shoulder1i);
                 break;}
             case R.id.shoulder2:{
@@ -224,6 +268,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 shoulder2i.putExtra("exerciseDetail", exerciseDetails[x]);
                 shoulder2i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 shoulder2i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+               shoulder2i.putExtras(bundle);
                 startActivity(shoulder2i);
                 break;}
             case R.id.shoulder3:{
@@ -234,6 +282,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 shoulder3i.putExtra("exerciseDetail", exerciseDetails[x]);
                 shoulder3i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 shoulder3i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                shoulder3i.putExtras(bundle);
                 startActivity(shoulder3i);
                 break;}
 
@@ -245,6 +297,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 arms0i.putExtra("exerciseDetail", exerciseDetails[x]);
                 arms0i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 arms0i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+               arms0i.putExtras(bundle);
                 startActivity(arms0i);
                 break;}
             case R.id.arms1:{
@@ -255,6 +311,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 arms1i.putExtra("exerciseDetail", exerciseDetails[x]);
                 arms1i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 arms1i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+               arms1i.putExtras(bundle);
                 startActivity(arms1i);
                 break;}
             case R.id.arms2:{
@@ -265,6 +325,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 arms2i.putExtra("exerciseDetail", exerciseDetails[x]);
                 arms2i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 arms2i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                arms2i.putExtras(bundle);
                 startActivity(arms2i);
                 break;}
             case R.id.arms3:{
@@ -275,6 +339,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 arms3i.putExtra("exerciseDetail", exerciseDetails[x]);
                 arms3i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 arms3i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                arms3i.putExtras(bundle);
                 startActivity(arms3i);
                 break;}
 
@@ -286,6 +354,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 legs0i.putExtra("exerciseDetail", exerciseDetails[x]);
                 legs0i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 legs0i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                legs0i.putExtras(bundle);
                 startActivity(legs0i);
                 break;}
             case R.id.legs1:{
@@ -296,6 +368,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 legs1i.putExtra("exerciseDetail", exerciseDetails[x]);
                 legs1i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 legs1i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                legs1i.putExtras(bundle);
                 startActivity(legs1i);
                 break;}
             case R.id.legs2:{
@@ -306,6 +382,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 legs2i.putExtra("exerciseDetail", exerciseDetails[x]);
                 legs2i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 legs2i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                legs2i.putExtras(bundle);
                 startActivity(legs2i);
                 break;}
             case R.id.legs3:{
@@ -316,10 +396,33 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 legs3i.putExtra("exerciseDetail", exerciseDetails[x]);
                 legs3i.putExtra("exerciseInstruction", exerciseInstructions[x]);
                 legs3i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("workout", x);
+                legs3i.putExtras(bundle);
                 startActivity(legs3i);
                 break;}
 
             }
+    }
+
+
+
+
+
+    public void initActionBarLogo(){
+
+
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+
+        actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.custom_logo, null);
+
+        actionBar.setCustomView(view);
     }
 
 
