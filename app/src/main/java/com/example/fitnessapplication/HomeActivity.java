@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,20 +21,18 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
+
 
 import java.text.DateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import android.net.Uri;
 
 public class HomeActivity extends AppCompatActivity implements SensorEventListener {
     private int STORAGE_PERMISSION_CODE = 1;
@@ -72,6 +71,7 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
     PedometerDataSource pedometerDataSource = new PedometerDataSource(this);
     FoodDataSource foodDataSource = new FoodDataSource(this);
     ExerciseDataSource exerciseDataSource = new ExerciseDataSource(this);
+    ProgressBar stepProgress;
     ArrayList<Exercise>exer = new ArrayList<Exercise>();
     ArrayList<Profile> prof = new ArrayList<>();
     ArrayList<Food> foodToday = new ArrayList<Food>();
@@ -82,6 +82,12 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_home);
         initDate();
         initActionBarLogo();
+        initBarChart();
+        initFoodData();
+        initExerciseData();
+        initBMIHelp();
+        initStepsHelp();
+        initCaloriesHelp();
 
 
 if(ContextCompat.checkSelfPermission(HomeActivity.this,
@@ -91,9 +97,9 @@ if(ContextCompat.checkSelfPermission(HomeActivity.this,
         requestActivityPermission();
         }
         ProgressBar progress = findViewById(R.id.progressBar);
-        ProgressBar stepProgress  = new ProgressBar(this );
+
         stepProgress = findViewById(R.id.stepProgressBar);
-        stepProgress.setProgress(50);
+
 
         textViewStepCounter = findViewById(R.id.stepsValueLabel);
         textViewDistaceCounter = findViewById(R.id.todayMilesVal);
@@ -176,6 +182,7 @@ if(ContextCompat.checkSelfPermission(HomeActivity.this,
             prof =  profileDataSource.getProfile();
             TextView tw = findViewById(R.id.weightLabelVal);
             TextView tg = findViewById(R.id.curWeightVal);
+            TextView profileName = findViewById(R.id.profileName);
 
 
 
@@ -188,10 +195,15 @@ if(ContextCompat.checkSelfPermission(HomeActivity.this,
             else if (prof.get(0).getGoalWeight()==5){ tw.setText("Weight Gain"); fitness_goal = 5;}
             else if (prof.get(0).getGoalWeight()==6){ tw.setText("Extreme Weight Gain"); fitness_goal = 6; }
             else if (prof.get(0).getGoalWeight()==7){ tw.setText("Maintain Weight"); fitness_goal = 7; }
-            tg.setText(String.valueOf((int)prof.get(0).getWeight())+" lb");
 
+
+
+
+            tg.setText(String.valueOf((int)prof.get(0).getWeight())+" lb");
+            profileName.setText("Hello "+prof.get(0).getName()+"!");
             double bmiTemp = (prof.get(0).getWeight()/(prof.get(0).getHeight()*prof.get(0).getHeight()))* 703;
-            textViewBmiCounter.setText(String.valueOf((int)bmiTemp));
+            String bmiString = String.format("%.1f",bmiTemp);
+            textViewBmiCounter.setText(bmiString);
 
         }
             //=========================================================================================//
@@ -219,7 +231,7 @@ if (foodDataSource.getCount()>0){
         initHomeActivity();
         initExerciseActivity();
         initNutritionActivity();
-        initGraph();
+
         exerciseUpdate();
 
 
@@ -227,9 +239,33 @@ if (foodDataSource.getCount()>0){
                 if(profileDataSource.getCount()==1) {
                     caloricUpdate();
                     //====Setting Daily Calories TextView when there is data====//
-                    calPercentileTv.setText((int) calorieProgressPercentile + "%");
+                    ValueAnimator animator = new ValueAnimator();
+                    ValueAnimator animator2 = new ValueAnimator();
+                    int x  = (int)dailyCalorieIntake;
+                    int y = (int)calorieProgressPercentile;
+                    animator.setObjectValues(0, x);
+                    animator2.setObjectValues(0, y);
+                    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        public void onAnimationUpdate(ValueAnimator animation) {
+                            calValRatioTv.setText(String.valueOf(animation.getAnimatedValue()) + " Cal / " + (int) dailyCalorieGoal + " Cal");
+                        }
+                    });
+                    animator.setDuration(2000); // here you set the duration of the anim
+                    animator.start();
+                    animator2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        public void onAnimationUpdate(ValueAnimator animation) {
+                            calPercentileTv.setText(String.valueOf(animation.getAnimatedValue()) + "%");
+                            progress.setProgress((int)animation.getAnimatedValue());
+                        }
+                    });
+                    animator2.setDuration(2000); // here you set the duration of the anim
+                    animator2.start();
+
+
+
+
                     calValRatioTv.setText((int) dailyCalorieIntake + " Cal / " + (int) dailyCalorieGoal + " Cal");
-                    progress.setProgress((int) calorieProgressPercentile);
+
                     //=====================================================//
 
                 }
@@ -247,31 +283,6 @@ if (foodDataSource.getCount()>0){
 
     }
 
-    private void initGraph(){
-        BarChart barChart = findViewById(R.id.barChart);
-
-        ArrayList<BarEntry> steps = new ArrayList<>();
-        for(int i = 0; i < ped.size(); i++) {
-            String str[] = ped.get(i).getDate().split("/");
-            int day = Integer.parseInt(str[1]);
-
-            steps.add(new BarEntry(day, ped.get(i).getstepCount()));
-
-        }
-        BarDataSet barDataSet = new BarDataSet(steps, "Number of Steps");
-        barDataSet.setColors(Color.CYAN);
-        barDataSet.setValueTextColor(Color.BLACK);
-        barDataSet.setValueTextSize(11f);
-
-        BarData barData = new BarData (barDataSet);
-
-        barChart.setFitBars(true);
-        barChart.setData(barData);
-        barChart.getDescription().setText("Steps Progress");
-        barChart.animateY(2000);
-
-
-    }
 
 
     private void initMeActivity(){
@@ -354,14 +365,24 @@ if (foodDataSource.getCount()>0){
             pedometerDataSource.open();
             pedometer.setPedId(pedometerDataSource.getLastItemID());
             stepCount++;
-            textViewStepCounter.setText(String.valueOf(stepCount));
+            textViewStepCounter.setText(String.valueOf(stepCount)+" steps");
 
 
             //Miles conversion formula here, if the gender is female then multiplier is changed to 0.413
-            if (prof.get(0).getGender() == 2)
-                x = 0.413;
-            textViewDistaceCounter.setText(String.format("%.2f",((float)stepCount*(x*prof.get(0).getHeight()))/63360)+"miles");
+            profileDataSource.open();
+            if(profileDataSource.getCount()!=0) {
+                if (prof.get(0).getGender() == 2)
+                    x = 0.413;
+                    double y = prof.get(0).getStepsGoal();
+                profileDataSource.close();
+                textViewDistaceCounter.setText(String.format("%.2f", ((float) stepCount * (x * prof.get(0).getHeight())) / 63360) + "miles");
+                textViewStepCounter.setText(String.valueOf(stepCount)+" / "+(int)y+" steps");
 
+                stepProgress = findViewById(R.id.stepProgressBar);
+                double p = (stepCount/y)*100;
+                stepProgress.setProgress((int)p);
+
+            }
             pedometer.setStepCount(stepCount);
             pedometer.setAnswer(answer);
             pedometer.setDate(dateNow);
@@ -473,8 +494,8 @@ if (foodDataSource.getCount()>0){
             exerciseDataSource.close();
             for(int i  = 0; i < exer.size();i++){
                 if(exer.get(i).getDate().equals(dateNow)) {
-                    workoutList = workoutList +" -- "+ exer.get(i).getExerciseName()+" --";
-                    if ((i+1)%2==0){workoutList = workoutList + "\n\n";}
+                    workoutList = workoutList +" - "+ exer.get(i).getExerciseName();
+                   workoutList = workoutList + "\n\n";
                     tvWorkout.setText(workoutList);
                     count++;
                 }
@@ -498,8 +519,9 @@ if (foodDataSource.getCount()>0){
         double height = prof.get(0).getHeight();
         double age = prof.get(0).getAge();
         double gender = prof.get(0).getGender();
-        double bmrM = 66 + (6.23*weight)+(12.7*height)-(6.8*age);
-        double bmrF = 655 + (4.35*weight)+(4.7*height)-(4.7*age);
+        double equation = (10*(weight*0.453592))+(6.25*(height*2.54));
+        double bmrM = equation-(5*age)+5;
+        double bmrF = equation -(5*age)-161;
 
 
         int foodCount = foodToday.size();
@@ -535,4 +557,83 @@ if (foodDataSource.getCount()>0){
 
 
     }
+
+
+
+    public void initBarChart(){
+       ImageButton icon = findViewById(R.id.barChartButton);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, BarGraph_Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+
+
+    }
+    public void initFoodData(){
+        ImageButton icon = findViewById(R.id.food_data_button);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, FoodList_Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+
+
+    }
+    public void initExerciseData(){
+        ImageButton icon = findViewById(R.id.exercise_data_button);
+        icon.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ExerciseList_Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+
+
+    }
+
+
+
+    public void initBMIHelp(){
+        ImageButton icon = findViewById(R.id.bmiHelpButton);
+        icon.setOnClickListener(v -> {
+         bmiHelp();
+        });
+
+
+    }
+    public void initStepsHelp(){
+        ImageButton icon = findViewById(R.id.stepshelpButton);
+        icon.setOnClickListener(v -> {
+           stepsHelp();
+        });
+
+
+    }
+    public void initCaloriesHelp(){
+        ImageButton icon = findViewById(R.id.caloriesHelpButton);
+        icon.setOnClickListener(v -> {
+            caloriesHelp();
+        });
+
+
+    }
+    public void caloriesHelp(){
+        goToUrl("https://www.calculator.net/calorie-calculator.html");
+
+    }
+    public void stepsHelp(){
+        goToUrl("https://www.verywellfit.com/how-many-walking-steps-are-in-a-mile-3435916");
+
+    }
+
+    public void bmiHelp(){
+        goToUrl("https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator.html");
+
+    }
+    private void goToUrl(String url){
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent (Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
+    }
+
 }

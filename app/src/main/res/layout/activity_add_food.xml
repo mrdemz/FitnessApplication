@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AddFoodActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,6 +24,7 @@
             android:layout_marginTop="15dp"
             android:paddingBottom="15dp"
             android:text="@string/addNewFoodString"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +51,11 @@
         android:ems="10"
         android:hint="@string/nameOfFoodHint"
         android:inputType="textPersonName"
+        android:maxLength="20"
         android:text="@string/nameOfFoodString"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorPrimary"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -60,6 +67,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="100dp"
         android:text="@string/caloriesPerServingString"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +80,9 @@
         android:layout_marginStart="50dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:textColor="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintBaseline_toBaselineOf="@id/calPerServLabel"
         app:layout_constraintStart_toEndOf="@+id/calPerServLabel" />
 
@@ -81,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:text="@string/calUnitString"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@id/calValueEditText"
@@ -96,7 +108,11 @@
         android:ems="10"
         android:hint="@string/servingDescHint"
         android:inputType="textPersonName"
+        android:maxLength="30"
         android:text="@string/servingDescriptionString"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimary"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addFoodNameEt" />

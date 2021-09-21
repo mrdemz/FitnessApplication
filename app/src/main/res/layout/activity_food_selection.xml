@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/headerConstraint">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout4"
+            android:id="@+id/divider1"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/colorPrimary"
@@ -64,6 +64,7 @@
             android:clickable="true"
             android:scaleX="0.5"
             android:scaleY="0.5"
+            android:tint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_input_add" />
@@ -71,7 +72,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerConstraint"
-        android:layout_width="391dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +80,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout4"
+            android:id="@+id/divider2"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/colorPrimary"
@@ -97,6 +98,7 @@
             android:layout_marginTop="20dp"
             android:paddingBottom="10dp"
             android:text="TextView"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/backButton"

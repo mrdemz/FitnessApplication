@@ -11,6 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+
+        <activity
+            android:name=".ExerciseList_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".FoodList_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".BarGraph_Activity"
+            android:exported="true" />
         <activity
             android:name=".AddFoodActivity"
             android:exported="true" />
@@ -24,7 +34,8 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ExerciseActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

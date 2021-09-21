@@ -55,7 +55,7 @@
     <string name="caloriesPerServingString">Calories per serving</string>
     <string name="calUnitString">cal</string>
     <string name="servingDescriptionString" />
-    <string name="servingDescHint" >Serving description</string>
+    <string name="servingDescHint">Serving description</string>
     <string name="addFoodCancelString">Cancel</string>
     <string name="addFoodSaveString">Save</string>
     <string name="bfastValueString" />
@@ -74,7 +74,7 @@
     <string name="workoutListString" />
     <string name="calPercentString" />
     <string name="calRatioString" />
-    <string name="nutritionString" >Nutrition</string>
+    <string name="nutritionString">Nutrition</string>
     <string name="foodString">Add Food</string>
     <string name="workoutCompleteString">Workout Complete</string>
     <string name="cancelWorkoutString">Cancel Workout</string>
@@ -86,11 +86,22 @@
     <string name="goal6String">Extreme weight gain</string>
     <string name="maintainString">Maintain Weight</string>
     <string name="basicInfoString">Basic Info</string>
-    <string name="actPrefString" >Activity Preferences</string>
+    <string name="actPrefString">Activity Preferences</string>
     <string name="targetStepsString">Target steps</string>
-    <string name="lbUnitString" >lb</string>
+    <string name="lbUnitString">lb</string>
     <string name="inUnitString">in</string>
     <string name="stepsDailyString">steps / day</string>
+    <string name="helloString">Hello!</string>
+    <string name="barGraphBackString">Back</string>
+    <string name="graphDataString">Steps Bar Chart Last 7 days</string>
+    <string name="foodHistoryString">Food Consumption History</string>
+    <string name="foodHistoryBackString">Back</string>
+    <string name="exerciseHistoryString">Exercise History</string>
+    <string name="foodNameDataString">food_name_data</string>
+    <string name="cal_data_string">cal_data</string>
+    <string name="serving_data_string">serving_data</string>
+    <string name="date_data_string">date_data</string>
+    <string name="type_data_string">type_data</string>
 
     <string-array name="food_name">
         <item>Banana</item>
@@ -131,27 +142,27 @@
     </string-array>
 
 
-<string-array name="fitness_workout">
-    <item>Lat Pulldown</item>
-    <item>Bent Over Lateral Raise</item>
-    <item>Pull Ups</item>
-    <item>Dumbell Row</item>
-    <item>Bench Press</item>
-    <item>Dumbell Press</item>
-    <item>Cable Fly</item>
-    <item>Dumbell Pullover</item>
-    <item>Military Press</item>
-    <item>Shoulder Press</item>
-    <item>Lateral Raise</item>
-    <item>Upright Row</item>
-    <item>Bicep Curls</item>
-    <item>Concentration Curls</item>
-    <item>Triceps Press</item>
-    <item>Dips</item>
-    <item>Squat</item>
-    <item>Side Squat</item>
-    <item>Lunges</item>
-    <item>Sumo Squat</item>
+    <string-array name="fitness_workout">
+        <item>Lat Pulldown</item>
+        <item>Bent Over Lateral Raise</item>
+        <item>Pull Ups</item>
+        <item>Dumbell Row</item>
+        <item>Bench Press</item>
+        <item>Dumbell Press</item>
+        <item>Cable Fly</item>
+        <item>Dumbell Pullover</item>
+        <item>Military Press</item>
+        <item>Shoulder Press</item>
+        <item>Lateral Raise</item>
+        <item>Upright Row</item>
+        <item>Bicep Curls</item>
+        <item>Concentration Curls</item>
+        <item>Triceps Press</item>
+        <item>Dips</item>
+        <item>Squat</item>
+        <item>Side Squat</item>
+        <item>Lunges</item>
+        <item>Sumo Squat</item>
 
-</string-array>
+    </string-array>
 </resources>

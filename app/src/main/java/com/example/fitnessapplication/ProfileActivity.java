@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -197,165 +199,189 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-
-
-                boolean wasSuccessful;
-
-                ProfileDataSource dataSource = new ProfileDataSource(ProfileActivity.this);
-                try {
-                    dataSource.open();
-
-                    if (dataSource.getCount() == 0) {
-                    int gender = 1;
-                    int activity = 1;
-                    int goal = 1;
-
-
-                        //condition for gender radio buttons
-                        if(radMale.isChecked()){
-                           gender = 1;
-                        }
-                        else if(radFemale.isChecked()){
-                            gender = 2;
-                        }
-                        // condition for activity level radio buttons
-                        if(act1.isChecked()){
-                            activity = 1;
-                        }
-                        else if(act2.isChecked()){
-                            activity = 2;
-                        }
-                        else if(act3.isChecked()){
-                            activity = 3;
-                        }
-                        else if(act4.isChecked()){
-                            activity = 4;
-                        }
-                        else if(act5.isChecked()){
-                            activity = 5;
-                        }
-                        else if(act6.isChecked()){
-                            activity = 6;
-
-                        }
-
-                        // condition for fitness goals radio buttons
-                        if(goal1.isChecked()){
-                            goal = 1;
-                        }
-                        else if(goal2.isChecked()){
-                            goal = 2;
-                        }
-                        else if(goal3.isChecked()){
-                            goal = 3;
-                        }
-                        else if(goal4.isChecked()){
-                            goal = 4;
-                        }
-                        else if(goal5.isChecked()){
-                            goal = 5;
-                        }
-                        else if(goal6.isChecked()){
-                            goal = 6;
-                        }
-                        else if(goal7.isChecked()){
-                            goal = 7;
-                        }
-
-
-                        profile.setGender(gender);
-                        profile.setName(etName.getText().toString());
-                        profile.setAge(Integer.parseInt(etAge.getText().toString()));
-                        profile.setWeight(Double.parseDouble(etWeight.getText().toString()));
-                        profile.setGoalWeight(goal);
-                        profile.setHeight(Double.parseDouble(etHeight.getText().toString()));
-                        profile.setActivity(activity);
-                        profile.setStepsGoal(Integer.parseInt(editSteps.getText().toString()));
-
-                        wasSuccessful = dataSource.insertItem(profile);
-                        if (wasSuccessful) {
-                            int newId = dataSource.getLastItemID();
-                            profile.setProfileId(newId);
-                            setForEditing(false);
-                            System.out.println("success");
-                        }
-                    } else {
-                        int gender = 1;
-                        int activity = 1;
-                        int goal = 1;
-
-                        if(radMale.isChecked()){
-                            gender = 1;
-                        }
-                        else if(radFemale.isChecked()){
-                            gender = 2;
-                        }
-
-                        if(act1.isChecked()){
-                            activity = 1;
-                        }
-                        else if(act2.isChecked()){
-                            activity = 2;
-                        }
-                        else if(act3.isChecked()){
-                            activity = 3;
-                        }
-                        else if(act4.isChecked()){
-                            activity = 4;
-                        }
-                        else if(act5.isChecked()){
-                            activity = 5;
-                        }
-                        else if(act6.isChecked()){
-                            activity = 6;
-
-                        }
-
-                        // condition for fitness goals radio buttons
-                        if(goal1.isChecked()){
-                            goal = 1;
-                        }
-                        else if(goal2.isChecked()){
-                            goal = 2;
-                        }
-                        else if(goal3.isChecked()){
-                            goal = 3;
-                        }
-                        else if(goal4.isChecked()){
-                            goal = 4;
-                        }
-                        else if(goal5.isChecked()){
-                            goal = 5;
-                        }
-                        else if(goal6.isChecked()){
-                            goal = 6;
-                        }
-                        else if(goal7.isChecked()){
-                            goal = 7;
-                        }
-                        profile.setGender(gender);
-
-                        profile.setName(etName.getText().toString());
-                        profile.setAge(Integer.parseInt(etAge.getText().toString()));
-                        profile.setWeight(Double.parseDouble(etWeight.getText().toString()));
-                        profile.setGoalWeight(goal);
-                        profile.setHeight(Double.parseDouble(etHeight.getText().toString()));
-                        profile.setProfileId(prof.get(0).getProfileId());
-                        profile.setActivity(activity);
-                        profile.setStepsGoal(Integer.parseInt(editSteps.getText().toString()));
-
-                        dataSource.updateProfile(profile);
+                if(!TextUtils.isEmpty(etName.getText().toString()) && !TextUtils.isEmpty(etAge.getText().toString())
+                        && !TextUtils.isEmpty(etWeight.getText().toString()) && !TextUtils.isEmpty(etHeight.getText().toString())
+                        && !TextUtils.isEmpty(editSteps.getText().toString())) {
 
 
 
-                        setForEditing(false);
+                    if(radMale.isChecked() || radFemale.isChecked()) {
+
+                        if(act1.isChecked()|| act2.isChecked()|| act3.isChecked()|| act4.isChecked()|| act5.isChecked()|| act6.isChecked() ) {
+
+
+                            if(goal1.isChecked()|| goal2.isChecked()|| goal3.isChecked()|| goal4.isChecked()|| goal5.isChecked()|| goal6.isChecked() ||goal7.isChecked()) {
+
+
+                                boolean wasSuccessful;
+
+                                ProfileDataSource dataSource = new ProfileDataSource(ProfileActivity.this);
+                                try {
+                                    dataSource.open();
+
+                                    if (dataSource.getCount() == 0) {
+                                        int gender = 1;
+                                        int activity = 1;
+                                        int goal = 1;
+
+
+                                        //condition for gender radio buttons
+                                        if (radMale.isChecked()) {
+                                            gender = 1;
+                                        } else if (radFemale.isChecked()) {
+                                            gender = 2;
+                                        }
+                                        // condition for activity level radio buttons
+                                        if (act1.isChecked()) {
+                                            activity = 1;
+                                        } else if (act2.isChecked()) {
+                                            activity = 2;
+                                        } else if (act3.isChecked()) {
+                                            activity = 3;
+                                        } else if (act4.isChecked()) {
+                                            activity = 4;
+                                        } else if (act5.isChecked()) {
+                                            activity = 5;
+                                        } else if (act6.isChecked()) {
+                                            activity = 6;
+
+                                        }
+
+                                        // condition for fitness goals radio buttons
+                                        if (goal1.isChecked()) {
+                                            goal = 1;
+                                        } else if (goal2.isChecked()) {
+                                            goal = 2;
+                                        } else if (goal3.isChecked()) {
+                                            goal = 3;
+                                        } else if (goal4.isChecked()) {
+                                            goal = 4;
+                                        } else if (goal5.isChecked()) {
+                                            goal = 5;
+                                        } else if (goal6.isChecked()) {
+                                            goal = 6;
+                                        } else if (goal7.isChecked()) {
+                                            goal = 7;
+                                        }
+
+
+                                        profile.setGender(gender);
+                                        profile.setName(etName.getText().toString());
+                                        profile.setAge(Integer.parseInt(etAge.getText().toString()));
+                                        profile.setWeight(Double.parseDouble(etWeight.getText().toString()));
+                                        profile.setGoalWeight(goal);
+                                        profile.setHeight(Double.parseDouble(etHeight.getText().toString()));
+                                        profile.setActivity(activity);
+                                        profile.setStepsGoal(Integer.parseInt(editSteps.getText().toString()));
+
+                                        wasSuccessful = dataSource.insertItem(profile);
+                                        if (wasSuccessful) {
+                                            int newId = dataSource.getLastItemID();
+                                            profile.setProfileId(newId);
+                                            setForEditing(false);
+                                            System.out.println("success");
+                                        }
+                                    } else {
+                                        int gender = 1;
+                                        int activity = 1;
+                                        int goal = 1;
+
+                                        if (radMale.isChecked()) {
+                                            gender = 1;
+                                        } else if (radFemale.isChecked()) {
+                                            gender = 2;
+                                        }
+
+                                        if (act1.isChecked()) {
+                                            activity = 1;
+                                        } else if (act2.isChecked()) {
+                                            activity = 2;
+                                        } else if (act3.isChecked()) {
+                                            activity = 3;
+                                        } else if (act4.isChecked()) {
+                                            activity = 4;
+                                        } else if (act5.isChecked()) {
+                                            activity = 5;
+                                        } else if (act6.isChecked()) {
+                                            activity = 6;
+
+                                        }
+
+                                        // condition for fitness goals radio buttons
+                                        if (goal1.isChecked()) {
+                                            goal = 1;
+                                        } else if (goal2.isChecked()) {
+                                            goal = 2;
+                                        } else if (goal3.isChecked()) {
+                                            goal = 3;
+                                        } else if (goal4.isChecked()) {
+                                            goal = 4;
+                                        } else if (goal5.isChecked()) {
+                                            goal = 5;
+                                        } else if (goal6.isChecked()) {
+                                            goal = 6;
+                                        } else if (goal7.isChecked()) {
+                                            goal = 7;
+                                        }
+                                        profile.setGender(gender);
+
+                                        profile.setName(etName.getText().toString());
+                                        profile.setAge(Integer.parseInt(etAge.getText().toString()));
+                                        profile.setWeight(Double.parseDouble(etWeight.getText().toString()));
+                                        profile.setGoalWeight(goal);
+                                        profile.setHeight(Double.parseDouble(etHeight.getText().toString()));
+                                        profile.setProfileId(prof.get(0).getProfileId());
+                                        profile.setActivity(activity);
+                                        profile.setStepsGoal(Integer.parseInt(editSteps.getText().toString()));
+
+                                        dataSource.updateProfile(profile);
+
+
+                                        setForEditing(false);
+                                        Toast.makeText(ProfileActivity.this, "Profile saved!", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                                        startActivity(intent);
+
+                                    }
+                                    //close the database
+                                    dataSource.close();
+                                } catch (Exception e) {
+
+                                }
+
+
+                            }//goal
+                            else{
+                                Toast.makeText(ProfileActivity.this, "Please select your goal", Toast.LENGTH_SHORT).show();
+
+                            }
+
+
+
+                        }//activity
+                        else{
+                            Toast.makeText(ProfileActivity.this, "Please select your activity level", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                    }//gender
+                    else{
+                        Toast.makeText(ProfileActivity.this, "Please select your gender", Toast.LENGTH_SHORT).show();
 
                     }
-                    //close the database
-                    dataSource.close();
-                } catch (Exception e) {
+
+
+                }//edittext
+                else{
+                    Toast.makeText(ProfileActivity.this, "Please fill in all basic info", Toast.LENGTH_SHORT).show();
 
                 }
+
+
+
 
             }
         });
